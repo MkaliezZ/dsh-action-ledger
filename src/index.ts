@@ -13,7 +13,7 @@ export function apply(ctx: Context, config: Config = {}): void {
     description: 'Show a bounded projection of this DSH session action lifecycle.',
     recordInput: false,
     async handler(invocation) {
-      const facts = invocation.agent.session.entries() as LedgerFact[]
+      const facts = invocation.agent.session.events as LedgerFact[]
       const records = projectActionLedger(facts)
       const summary = summarizeLedger(records)
       const rows = records.slice(-maxRows).map((r) => `${r.callId}  ${r.toolName}  ${r.phases.join(' -> ')}`)
