@@ -1,0 +1,4 @@
+- id: dsh-action-ledger
+  name: '@mkaliezz/dsh-action-ledger'
+  config:
+    maxRows: 40
